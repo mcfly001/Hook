@@ -1,0 +1,25 @@
+{
+    "Print to console": {
+        "prefix": "hook",
+        "body": [
+            "import React, { useState, useEffect } from 'react'",
+            "",
+            "const Foo = () => {",
+            "    const [count] = useState(0);",
+            "            ",
+            "    useEffect(() => {",
+            "        document.title = `${ count } times`;",
+            "    });",
+            "",
+            "    return (",
+            "        <div>",
+            "            { count }",
+            "        </div>",
+            "    );",
+            "};",
+            "    ",
+            "export default Foo;",
+        ],
+        "description": "Log output to console"
+    }
+}

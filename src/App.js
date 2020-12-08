@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/*
+ * @Descripttion: 
+ * @Author: 豆豉
+ * @Date: 2019-09-14 11:30:39
+ * @LastEditors: 豆豉
+ * @LastEditTime: 2020-10-12 22:38:46
+ */
+import React, { useState } from 'react'
+import UseSteteHook from './components/UseStateHook';
+import UseEffectHook from './components/UseEffectHook';
+import UsePrevious from './components/UsePrevious';
+import UseDemo from './components/UseDemo';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [value, setValue] = useState(0)
+
+    return (
+        <div>
+            {
+                value % 2 === 0 && <UseEffectHook />
+            }
+            
+            <UsePrevious value={value} onChange={val => setValue(val)} />
+            <UseDemo />
+            <UseSteteHook />
+            <button onClick={() => setValue(value + 1)}>新增</button>
+        </div>
+    );
+};
 
 export default App;
