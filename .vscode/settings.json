@@ -1,0 +1,7 @@
+{
+    "githubPullRequests.remotes": [
+        "origin",
+        "upstream",
+        "git@github.com:mcfly001/codereview.git"
+    ]
+}
